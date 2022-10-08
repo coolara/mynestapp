@@ -24,4 +24,9 @@ export class ArticleService {
 
     return res;
   }
+
+  async query(): Promise<Article[]> {
+    const res = await this.prisma.article.findMany();
+    return res;
+  }
 }
